@@ -9,3 +9,8 @@ simple block chain written in JS
 - [ ] 钱包
 - [ ] 账本完善？
 - [ ] TCP/RPC 通信？
+- [ ] 账本序列化与反序列化
+- [ ] TCP/RPC/socket 通信
+- [ ] 所用同步方法（例如 readFileAsync）改为流处理
+- [ ] 记账增加消息队列
+- [ ] 补齐 test, benchmark, performance
