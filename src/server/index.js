@@ -1,13 +1,22 @@
+const fs = require('fs')
+const path = require('path')
 const Koa = require('koa')
 const Router = require('koa-router')
 
 const app = new Koa()
 const router = new Router()
 
-router.redirect('/', 'all')
-// router.get('/all')
-// router.get('/get/:hash', )
-// router.post('/transaction', )
+router.get('/all', async ctx => {
+  const content = fs.readFileSync(path.resolve(__dirname, '../../lib', 'data.bitchain'))
+  const data = content ? JSON.parse(content) : []
+  return ctx.body = data
+})
+
+router.get('/get/:hash', async ctx => {
+  const content = fs.readFileSync(path.resolve(__dirname, '../../lib', 'data.bitchain'))
+  const data = content ? JSON.parse(content) : []
+  return ctx.body = data.filter(item => item.hash === ctx.params.hash)
+})
 
 app
   .use(router.routes())
