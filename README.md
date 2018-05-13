@@ -1,6 +1,16 @@
 # blockchain
 simple block chain written in JS
 
+## Install
+
+* via docker
+
+```bash
+docker build -t blockchain .
+
+docker run -p 8090:8090 blockchain
+```
+
 ## TODO
 
 - [ ] 增加交易模块
